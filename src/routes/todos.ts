@@ -33,6 +33,10 @@ router.put('/todo/:id',(req,res,next)=>{
         }
         return res.status(200).json({success:true,todos:todos})
     }
+    return res.status(404).json({
+        success:false,
+        message:'id is not found'
+    })
 })
 
 router.delete('/todo/:id',(req,res,next)=>{
